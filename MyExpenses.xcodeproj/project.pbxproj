@@ -13,6 +13,7 @@
 		C01764592AB3207300955E80 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C01764582AB3207300955E80 /* Preview Assets.xcassets */; };
 		C01764602AB320DD00955E80 /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C017645F2AB320DD00955E80 /* ExpenseItem.swift */; };
 		C01764622AB3216B00955E80 /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01764612AB3216B00955E80 /* Expenses.swift */; };
+		C0E686192AB35C4D003BB92B /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E686182AB35C4D003BB92B /* AddView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		C01764582AB3207300955E80 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C017645F2AB320DD00955E80 /* ExpenseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; };
 		C01764612AB3216B00955E80 /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
+		C0E686182AB35C4D003BB92B /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				C01764512AB3207300955E80 /* MyExpensesApp.swift */,
 				C01764532AB3207300955E80 /* ContentView.swift */,
+				C0E686182AB35C4D003BB92B /* AddView.swift */,
 				C017645F2AB320DD00955E80 /* ExpenseItem.swift */,
 				C01764612AB3216B00955E80 /* Expenses.swift */,
 				C01764552AB3207300955E80 /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 			files = (
 				C01764622AB3216B00955E80 /* Expenses.swift in Sources */,
 				C01764542AB3207300955E80 /* ContentView.swift in Sources */,
+				C0E686192AB35C4D003BB92B /* AddView.swift in Sources */,
 				C01764602AB320DD00955E80 /* ExpenseItem.swift in Sources */,
 				C01764522AB3207300955E80 /* MyExpensesApp.swift in Sources */,
 			);
