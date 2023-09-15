@@ -29,7 +29,9 @@ struct ContentView: View {
                             }
                             Spacer()
                             
-                            Text(item.amount, format: .currency(code: "USD"))
+                            Text(item.amount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                                .foregroundColor(item.amount < 11 ? .green : (item.amount < 100 ? .orange : .red))
+//                                .font(item.amount < 10 ? .headline.weight(.bold) : (item.amount >= 100 ? .headline.italic() : .headline))
                         }
                     }
                     .onDelete(perform: removeItems)
@@ -40,9 +42,10 @@ struct ContentView: View {
                         .font(.headline)
                         
                     Spacer()
-                    Text(totalExpense, format: .currency(code: "USD"))
+                    Text(totalExpense, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                         .font(.headline)
-                        .foregroundColor(.green)
+                        .foregroundColor(totalExpense < 11 ? .green : (totalExpense < 100 ? .orange : .red))
+                        
                 }
                 .underline()
                 .padding()
