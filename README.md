@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="https://github.com/Saydulayev/MyExpenses/blob/main/MyExpenses/Screenshots/Simulator%20Screenshot%202.19.png" width="400">
-  <img src="https://github.com/Saydulayev/MyExpenses/blob/main/MyExpenses/Screenshots/Simulator%20Screenshot%201.png"    width="400">
+  <img src="https://github.com/Saydulayev/MyExpenses/blob/main/MyExpenses/Screenshots/Simulator%20Screenshot.png" width="400">
+  <img src="https://github.com/Saydulayev/MyExpenses/blob/main/MyExpenses/Screenshots/Simulator%20Screenshot%20-%20iPhone%2014%20Pro%20-%202023-09-16%20at%2010.55.32.png"    width="400">
 </p>
 
 
