@@ -12,60 +12,103 @@ struct ContentView: View {
     @StateObject var expenses = Expenses()
     @State private var showingAddExpense = false
 
+    var personalExpenses: [ExpenseItem] {
+        expenses.items.filter { $0.type == "Personal" }
+    }
+    
+    var businessExpenses: [ExpenseItem] {
+        expenses.items.filter { $0.type == "Business" }
+    }
+    
     var totalExpense: Double {
         expenses.items.map { $0.amount }.reduce(0, +)
     }
     
+    func totalExpense(for items: [ExpenseItem]) -> Double {
+        items.map { $0.amount }.reduce(0, +)
+    }
+    
     var body: some View {
         NavigationView {
-            VStack {
-                List {
-                    ForEach(expenses.items) { item in
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text(item.name)
-                                    .font(.headline)
-                                Text(item.type)
+            ZStack {
+                VStack {
+                    List {
+                        Section(
+                            header: Text("Personal"),
+                            footer: Text("Total: \(totalExpense(for: personalExpenses), format: .currency(code: Locale.current.currency?.identifier ?? "USD"))")
+                                .foregroundColor(.secondary)
+                        ) {
+                            ForEach(personalExpenses) { item in
+                                expenseRow(for: item)
                             }
-                            Spacer()
-                            
-                            Text(item.amount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                                .foregroundColor(item.amount < 11 ? .green : (item.amount < 100 ? .orange : .red))
-//                                .font(item.amount < 10 ? .headline.weight(.bold) : (item.amount >= 100 ? .headline.italic() : .headline))
+                            .onDelete(perform: { indexSet in
+                                removeItems(at: indexSet, from: personalExpenses)
+                            })
+                        }
+
+                        Section(
+                            header: Text("Business"),
+                            footer: Text("Total: \(totalExpense(for: businessExpenses), format: .currency(code: Locale.current.currency?.identifier ?? "USD"))")
+                                .foregroundColor(.secondary)
+                        ) {
+                            ForEach(businessExpenses) { item in
+                                expenseRow(for: item)
+                            }
+                            .onDelete(perform: { indexSet in
+                                removeItems(at: indexSet, from: businessExpenses)
+                            })
                         }
                     }
-                    .onDelete(perform: removeItems)
+                    .listStyle(GroupedListStyle())
+                    
+                    HStack {
+                        Text("TOTAL:")
+                            .font(.headline)
+                            
+                        Spacer()
+                        Text(totalExpense, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                            .font(.headline)
+                            .foregroundColor(totalExpense < 11 ? .green : (totalExpense < 100 ? .orange : .red))
+                            
+                    }
+                    .underline()
+                    .padding()
                 }
-                
-                HStack {
-                    Text("Total:")
-                        .font(.headline)
-                        
-                    Spacer()
-                    Text(totalExpense, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                        .font(.headline)
-                        .foregroundColor(totalExpense < 11 ? .green : (totalExpense < 100 ? .orange : .red))
-                        
+                .navigationTitle("MyExpenses")
+                .toolbar {
+                    Button {
+                        showingAddExpense = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
                 }
-                .underline()
-                .padding()
+                .sheet(isPresented: $showingAddExpense) {
+                    AddView(expenses: expenses)
             }
-            .navigationTitle("MyExpenses")
-            .toolbar {
-                Button {
-                    showingAddExpense = true
-                } label: {
-                    Image(systemName: "plus")
-                }
-            }
-            .sheet(isPresented: $showingAddExpense) {
-                AddView(expenses: expenses)
             }
         }
     }
     
-    func removeItems(at offsets: IndexSet) {
-        expenses.items.remove(atOffsets: offsets)
+    func expenseRow(for item: ExpenseItem) -> some View {
+        HStack {
+            VStack(alignment: .leading) {
+                Text(item.name)
+                    .font(.headline)
+                Text(item.type)
+            }
+            Spacer()
+            
+            Text(item.amount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                .foregroundColor(item.amount < 11 ? .green : (item.amount < 100 ? .orange : .red))
+        }
+    }
+    
+    func removeItems(at offsets: IndexSet, from expenseArray: [ExpenseItem]) {
+        for index in offsets {
+            if let match = expenses.items.firstIndex(where: { $0.id == expenseArray[index].id }) {
+                expenses.items.remove(at: match)
+            }
+        }
     }
 }
 

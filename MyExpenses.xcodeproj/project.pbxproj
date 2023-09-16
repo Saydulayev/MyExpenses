@@ -13,9 +13,9 @@
 		C01764592AB3207300955E80 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C01764582AB3207300955E80 /* Preview Assets.xcassets */; };
 		C01764602AB320DD00955E80 /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C017645F2AB320DD00955E80 /* ExpenseItem.swift */; };
 		C01764622AB3216B00955E80 /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01764612AB3216B00955E80 /* Expenses.swift */; };
+		C09F53702AB5A3DC00A79024 /* Simulator Screenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = C09F536F2AB5A3DC00A79024 /* Simulator Screenshot.png */; };
 		C0E686192AB35C4D003BB92B /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E686182AB35C4D003BB92B /* AddView.swift */; };
 		C0E6861C2AB37208003BB92B /* Simulator Screenshot 1.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E6861B2AB37208003BB92B /* Simulator Screenshot 1.png */; };
-		C0E6861E2AB3720F003BB92B /* Simulator Screenshot 2.19.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E6861D2AB3720F003BB92B /* Simulator Screenshot 2.19.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,9 +26,9 @@
 		C01764582AB3207300955E80 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C017645F2AB320DD00955E80 /* ExpenseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; };
 		C01764612AB3216B00955E80 /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
+		C09F536F2AB5A3DC00A79024 /* Simulator Screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screenshot.png"; sourceTree = "<group>"; };
 		C0E686182AB35C4D003BB92B /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		C0E6861B2AB37208003BB92B /* Simulator Screenshot 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screenshot 1.png"; sourceTree = "<group>"; };
-		C0E6861D2AB3720F003BB92B /* Simulator Screenshot 2.19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screenshot 2.19.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +84,8 @@
 		C0E6861A2AB371AF003BB92B /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
+				C09F536F2AB5A3DC00A79024 /* Simulator Screenshot.png */,
 				C0E6861B2AB37208003BB92B /* Simulator Screenshot 1.png */,
-				C0E6861D2AB3720F003BB92B /* Simulator Screenshot 2.19.png */,
 			);
 			path = Screenshots;
 			sourceTree = "<group>";
@@ -148,8 +148,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0E6861E2AB3720F003BB92B /* Simulator Screenshot 2.19.png in Resources */,
 				C0E6861C2AB37208003BB92B /* Simulator Screenshot 1.png in Resources */,
+				C09F53702AB5A3DC00A79024 /* Simulator Screenshot.png in Resources */,
 				C01764592AB3207300955E80 /* Preview Assets.xcassets in Resources */,
 				C01764562AB3207300955E80 /* Assets.xcassets in Resources */,
 			);
